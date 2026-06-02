@@ -5,14 +5,36 @@ if (!userId) {
   localStorage.setItem("userId", userId);
 }
 async function loadData() {
-  const ref = doc(db, "users", userId);
-  const snap = await getDoc(ref);
+  const refDoc = doc(db, "users", userId);
+  const snap = await getDoc(refDoc);
 
   if (snap.exists()) {
     points = snap.data().points || 0;
     level = snap.data().level || 1;
     updatePoints();
+  } else {
+    await setDoc(refDoc, {
+      points: 0,
+      level: 1
+    });
+
+    const referredBy = localStorage.getItem("referredBy");
+
+    if (referredBy) {
+      const referrerDoc = doc(db, "users", referredBy);
+
+      await setDoc(
+        referrerDoc,
+        {
+          points: 500
+        },
+        { merge: true }
+      );
+
+      localStorage.removeItem("referredBy");
+    }
   }
+
 }
 async function saveData() {
   await setDoc(
