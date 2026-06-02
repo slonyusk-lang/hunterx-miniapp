@@ -121,4 +121,10 @@ function wallet() {
   alert("Wallet Balance: 0 TON");
 }
 
+const urlParams = new URLSearchParams(window.location.search);
+const ref = urlParams.get("ref");
+
+if (ref && ref !== userId) {
+  localStorage.setItem("referredBy", ref);
+}
 loadData();
