@@ -28,3 +28,10 @@ window.setDoc = setDoc;
 window.updateDoc = updateDoc;
 
 console.log("Firebase Connected!");
+export {
+  db,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc
+};
