@@ -45,3 +45,8 @@ button:hover {
   width: 22%;
   margin: 2px;
 }
+#level {
+  color: gold;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
