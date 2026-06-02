@@ -37,6 +37,7 @@ function mine() {
   points += 2;
   localStorage.setItem("points", points);
   updatePoints();
+  saveData();
 }
 
 function deposit() {
