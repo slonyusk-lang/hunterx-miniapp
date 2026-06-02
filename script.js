@@ -1,4 +1,5 @@
 let points = 0;
+let level = 1;
 
 function mine() {
   points += 2;
@@ -21,10 +22,7 @@ function withdraw() {
   }
 }
 
-let level = 1;
-
 function checkLevel() {
-
   if (points >= 1000) level = 2;
   if (points >= 5000) level = 3;
   if (points >= 10000) level = 4;
@@ -39,19 +37,19 @@ function checkLevel() {
     "Level " + level;
 }
 
-  document.getElementById("level").innerText =
-    "Level " + level;
+function referral() {
+  alert(
+    "Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/"
+  );
 }
 
-function referral() {
-  alert("Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/");
-}
 function dailyReward() {
   points += 100;
 
   document.getElementById("points").innerText =
     points + " Points";
 
+  checkLevel();
+
   alert("You received 100 bonus points!");
 }
-
