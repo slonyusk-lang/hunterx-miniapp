@@ -1,3 +1,4 @@
+const userId = "testuser";
 let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
 
