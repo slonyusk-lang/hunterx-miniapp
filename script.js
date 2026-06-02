@@ -1,8 +1,10 @@
-const db = window.db;
-const doc = window.doc;
-const getDoc = window.getDoc;
-const setDoc = window.setDoc;
-const updateDoc = window.updateDoc;
+import {
+  db,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc
+} from "./firebase.js";
 const userId = "testuser";
 async function loadData() {
   const ref = doc(db, "users", userId);
