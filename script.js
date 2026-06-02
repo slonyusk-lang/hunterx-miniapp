@@ -1,4 +1,9 @@
-const userId = "testuser";
+let userId = localStorage.getItem("userId");
+
+if (!userId) {
+  userId = "user_" + Math.floor(Math.random() * 1000000000);
+  localStorage.setItem("userId", userId);
+}
 async function loadData() {
   const ref = doc(db, "users", userId);
   const snap = await getDoc(ref);
