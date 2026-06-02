@@ -44,5 +44,6 @@ function dailyReward() {
   document.getElementById("points").innerText =
     points + " Points";
 
-  alert("You received 500 bonus points!");
+  alert("You received 100 bonus points!");
 }
+
