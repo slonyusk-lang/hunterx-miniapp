@@ -1,7 +1,7 @@
 let points = 0;
 
 function mine() {
-  points += 5;
+  points += 2;
   document.getElementById("points").innerText =
     points + " Points";
 
@@ -37,4 +37,12 @@ function checkLevel() {
 
 function referral() {
   alert("Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/");
+}
+function dailyReward() {
+  points += 100;
+
+  document.getElementById("points").innerText =
+    points + " Points";
+
+  alert("You received 500 bonus points!");
 }
