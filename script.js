@@ -11,5 +11,9 @@ function deposit() {
 }
 
 function withdraw() {
-  alert("Minimum withdrawal: 10,000 Points");
+  if (points < 1000000) {
+    alert("Minimum withdrawal: 1,000,000 Points");
+  } else {
+    alert("Withdrawal Request Sent");
+  }
 }
