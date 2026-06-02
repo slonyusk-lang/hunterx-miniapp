@@ -82,7 +82,7 @@ function checkLevel() {
 
 function referral() {
   alert(
-    "Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/"
+    "Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/?ref=" + userId
   );
 }
 
