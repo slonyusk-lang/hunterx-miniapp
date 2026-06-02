@@ -37,3 +37,11 @@ button {
 button:hover {
   opacity: 0.9;
 }
+.menu {
+  margin-top: 20px;
+}
+
+.menu button {
+  width: 22%;
+  margin: 2px;
+}
