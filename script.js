@@ -1,8 +1,22 @@
 let points = Number(localStorage.getItem("points")) || 0;
+function updatePoints() {
+  document.getElementById("points").innerText =
+    points + " Points";
+
+  let percent = (points % 1000) / 10;
+
+  document.getElementById("bar").style.width =
+    percent + "%";
+}
 let level = 1;
 
 function mine() {
-  points += level * 2;
+  points += 2;
+
+  localStorage.setItem("points", points);
+
+  updatePoints();
+}
 
   document.getElementById("points").innerText =
     points + " Points";
