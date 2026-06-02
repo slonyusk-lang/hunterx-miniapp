@@ -35,3 +35,6 @@ function checkLevel() {
     "Level " + level;
 }
 
+function referral() {
+  alert("Your Referral Link:\n\nhttps://slonyusk-lang.github.io/hunterx-miniapp/");
+}
