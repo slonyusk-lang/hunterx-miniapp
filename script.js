@@ -121,4 +121,4 @@ function wallet() {
   alert("Wallet Balance: 0 TON");
 }
 
-loadData();
+updatePoints();
