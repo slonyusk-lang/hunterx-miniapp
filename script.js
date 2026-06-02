@@ -1,7 +1,7 @@
 let points = 0;
 
 function mine() {
-  points += 100;
+  points += 10;
   document.getElementById("points").innerText =
     points + " Points";
 }
