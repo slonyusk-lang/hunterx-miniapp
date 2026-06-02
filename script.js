@@ -83,3 +83,7 @@ function friends() {
 function wallet() {
   alert("Wallet Balance: 0 TON");
 }
+document.getElementById("points").innerText =
+  points + " Points";
+
+checkLevel();
