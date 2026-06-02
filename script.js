@@ -1,21 +1,13 @@
 let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
-function mine(document.getElementById("points").innerText =
-  points + " Points";)
-localStorage.setItem("points", points); {
-  points += level * 2;
 
- document.getElementById("points").innerText =
-    points + " Points";
-
-  localStorage.setItem("points", points);
-
-  checkLevel();
-}{
+function mine() {
   points += level * 2;
 
   document.getElementById("points").innerText =
     points + " Points";
+
+  localStorage.setItem("points", points);
 
   checkLevel();
 }
@@ -53,7 +45,7 @@ function referral() {
   );
 }
 
-function dailyReward(localStorage.setItem("points", points);) {
+function dailyReward() {
   let claimed = localStorage.getItem("dailyReward");
 
   if (claimed === "yes") {
@@ -66,12 +58,15 @@ function dailyReward(localStorage.setItem("points", points);) {
   document.getElementById("points").innerText =
     points + " Points";
 
+  localStorage.setItem("points", points);
+
   checkLevel();
 
   localStorage.setItem("dailyReward", "yes");
 
   alert("You received 100 bonus points!");
 }
+
 function home() {
   alert("Home Page");
 }
@@ -83,6 +78,7 @@ function friends() {
 function wallet() {
   alert("Wallet Balance: 0 TON");
 }
+
 document.getElementById("points").innerText =
   points + " Points";
 
