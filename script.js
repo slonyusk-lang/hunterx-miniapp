@@ -1,4 +1,14 @@
 const userId = "testuser";
+async function loadData() {
+  const ref = doc(db, "users", userId);
+  const snap = await getDoc(ref);
+
+  if (snap.exists()) {
+    points = snap.data().points || 0;
+    level = snap.data().level || 1;
+    updatePoints();
+  }
+}
 let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
 
