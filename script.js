@@ -62,3 +62,14 @@ function dailyReward() {
 
   alert("You received 100 bonus points!");
 }
+function home() {
+  alert("Home Page");
+}
+
+function friends() {
+  alert("Friends: 0");
+}
+
+function wallet() {
+  alert("Wallet Balance: 0 TON");
+}
