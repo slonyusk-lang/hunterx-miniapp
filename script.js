@@ -60,17 +60,22 @@ function referral() {
 }
 
 function dailyReward() {
-  const claimed = localStorage.getItem("dailyReward");
+  let lastClaim = localStorage.getItem("lastClaim");
+  let now = Date.now();
 
-  if (claimed === "yes") {
-    alert("Daily reward already claimed!");
+  if (lastClaim && now - lastClaim < 86400000) {
+    let hoursLeft = Math.ceil(
+      (86400000 - (now - lastClaim)) / 3600000
+    );
+
+    alert("Come back in " + hoursLeft + " hours!");
     return;
   }
 
   points += 100;
 
   localStorage.setItem("points", points);
-  localStorage.setItem("dailyReward", "yes");
+  localStorage.setItem("lastClaim", now);
 
   updatePoints();
 
