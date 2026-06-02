@@ -2,6 +2,7 @@ let points = 0;
 
 function mine() {
   points += 2;
+
   document.getElementById("points").innerText =
     points + " Points";
 
