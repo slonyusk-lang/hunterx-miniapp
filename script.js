@@ -1,7 +1,17 @@
-let points = 0;
+let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
+function mine(document.getElementById("points").innerText =
+  points + " Points";)
+localStorage.setItem("points", points); {
+  points += level * 2;
 
-function mine() {
+ document.getElementById("points").innerText =
+    points + " Points";
+
+  localStorage.setItem("points", points);
+
+  checkLevel();
+}{
   points += level * 2;
 
   document.getElementById("points").innerText =
@@ -43,7 +53,7 @@ function referral() {
   );
 }
 
-function dailyReward() {
+function dailyReward(localStorage.setItem("points", points);) {
   let claimed = localStorage.getItem("dailyReward");
 
   if (claimed === "yes") {
