@@ -10,10 +10,14 @@ async function loadData() {
   }
 }
 async function saveData() {
-  await updateDoc(doc(db, "users", userId), {
-    points: points,
-    level: level
-  });
+  await setDoc(
+    doc(db, "users", userId),
+    {
+      points: points,
+      level: level
+    },
+    { merge: true }
+  );
 }
 let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
