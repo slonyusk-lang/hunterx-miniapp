@@ -44,12 +44,21 @@ function referral() {
 }
 
 function dailyReward() {
+  let claimed = localStorage.getItem("dailyReward");
+
+  if (claimed === "yes") {
+    alert("Daily reward already claimed!");
+    return;
+  }
+
   points += 100;
 
   document.getElementById("points").innerText =
     points + " Points";
 
   checkLevel();
+
+  localStorage.setItem("dailyReward", "yes");
 
   alert("You received 100 bonus points!");
 }
