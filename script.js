@@ -1,29 +1,25 @@
 let points = Number(localStorage.getItem("points")) || 0;
-function updatePoints() {
-  document.getElementById("points").innerText =
-    points + " Points";
-
-  let percent = (points % 1000) / 10;
-
-  document.getElementById("bar").style.width =
-    percent + "%";
-}
 let level = 1;
+
+function updatePoints() {
+  const pointsEl = document.getElementById("points");
+  if (pointsEl) {
+    pointsEl.innerText = points + " Points";
+  }
+
+  checkLevel();
+
+  const bar = document.getElementById("bar");
+  if (bar) {
+    const percent = (points % 1000) / 10;
+    bar.style.width = percent + "%";
+  }
+}
 
 function mine() {
   points += 2;
-
   localStorage.setItem("points", points);
-
   updatePoints();
-}
-
-  document.getElementById("points").innerText =
-    points + " Points";
-
-  localStorage.setItem("points", points);
-
-  checkLevel();
 }
 
 function deposit() {
@@ -39,6 +35,8 @@ function withdraw() {
 }
 
 function checkLevel() {
+  level = 1;
+
   if (points >= 1000) level = 2;
   if (points >= 5000) level = 3;
   if (points >= 10000) level = 4;
@@ -49,8 +47,10 @@ function checkLevel() {
   if (points >= 500000) level = 9;
   if (points >= 1000000) level = 10;
 
-  document.getElementById("level").innerText =
-    "Level " + level;
+  const levelEl = document.getElementById("level");
+  if (levelEl) {
+    levelEl.innerText = "Level " + level;
+  }
 }
 
 function referral() {
@@ -60,7 +60,7 @@ function referral() {
 }
 
 function dailyReward() {
-  let claimed = localStorage.getItem("dailyReward");
+  const claimed = localStorage.getItem("dailyReward");
 
   if (claimed === "yes") {
     alert("Daily reward already claimed!");
@@ -69,14 +69,10 @@ function dailyReward() {
 
   points += 100;
 
-  document.getElementById("points").innerText =
-    points + " Points";
-
   localStorage.setItem("points", points);
-
-  checkLevel();
-
   localStorage.setItem("dailyReward", "yes");
+
+  updatePoints();
 
   alert("You received 100 bonus points!");
 }
@@ -93,7 +89,4 @@ function wallet() {
   alert("Wallet Balance: 0 TON");
 }
 
-document.getElementById("points").innerText =
-  points + " Points";
-
-checkLevel();
+updatePoints();
