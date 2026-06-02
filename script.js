@@ -7,7 +7,7 @@ function mine() {
 }
 
 function deposit() {
-  alert("TON Deposit Address");
+  alert("TON Deposit Address:\n\nUQA_FHw83JfB4Hfc0DDMKXTDNAfqFc0OUj3toBSzOTia0BVi");
 }
 
 function withdraw() {
