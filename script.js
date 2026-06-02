@@ -9,6 +9,12 @@ async function loadData() {
     updatePoints();
   }
 }
+async function saveData() {
+  await updateDoc(doc(db, "users", userId), {
+    points: points,
+    level: level
+  });
+}
 let points = Number(localStorage.getItem("points")) || 0;
 let level = 1;
 
