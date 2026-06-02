@@ -6,27 +6,7 @@
 <title>Hunter X Mining</title>
 <link rel="stylesheet" href="style.css?v=2">
 </head>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB9Ubz8YaUz15q5zD20fCYuX-cqZjmtIgM",
-  authDomain: "hunterxmining-98139.firebaseapp.com",
-  projectId: "hunterxmining-98139",
-  storageBucket: "hunterxmining-98139.firebasestorage.app",
-  messagingSenderId: "114899801174",
-  appId: "1:114899801174:web:cff3da2ba5f02d31bad7f7",
-  measurementId: "G-CKZYHD6T6Q"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-window.db = db;
-</script>
-<script type="module" src="firebase.js"></script>
-<script src="script.js"></script>
 <body>
 
 <div class="card">
@@ -36,13 +16,13 @@ window.db = db;
 <h2 id="points">0 Points</h2>
 
 <h3 id="level">Level 1</h3>
-  
+
 <div class="progress">
   <div id="bar"></div>
 </div>
-  
+
 <h3 id="friends">Friends: 0</h3>
-  
+
 <h3 id="wallet">Wallet: 0 TON</h3>
 
 <button onclick="mine()">⛏ Mine</button>
@@ -59,7 +39,7 @@ window.db = db;
 
 <button onclick="dailyReward()">🎁 Daily Reward</button>
 
-  <div class="menu">
+<div class="menu">
   <button onclick="home()">🏠 Home</button>
   <button onclick="mine()">⛏ Mine</button>
   <button onclick="friends()">👥 Friends</button>
@@ -68,8 +48,8 @@ window.db = db;
 
 </div>
 
+<script type="module" src="firebase.js"></script>
 <script src="script.js?v=2"></script>
 
 </body>
 </html>
-
