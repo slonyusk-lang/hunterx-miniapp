@@ -1,5 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyB9Ubz8YaUz15q5zD20fCYuX-cqZjmtIgM",
   authDomain: "hunterxmining-98139.firebaseapp.com",
@@ -11,5 +19,12 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-window.firebaseApp = app;
+window.db = db;
+window.doc = doc;
+window.getDoc = getDoc;
+window.setDoc = setDoc;
+window.updateDoc = updateDoc;
+
+console.log("Firebase Connected!");
