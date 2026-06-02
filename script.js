@@ -1,9 +1,11 @@
 let points = 0;
 
 function mine() {
-  points += 10;
+  points += 5;
   document.getElementById("points").innerText =
     points + " Points";
+
+  checkLevel();
 }
 
 function deposit() {
@@ -18,4 +20,18 @@ function withdraw() {
   }
 }
 
+let level = 1;
+
+function checkLevel() {
+  if (points >= 1000) {
+    level = 2;
+  }
+
+  if (points >= 5000) {
+    level = 3;
+  }
+
+  document.getElementById("level").innerText =
+    "Level " + level;
+}
 
